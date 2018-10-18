@@ -24,7 +24,7 @@ public class ProductController {
 	CategoryRepository categoryRepository;
 
 
-	@RequestMapping(value="/addProduct",method=RequestMethod.POST)
+	@RequestMapping(value="/adminAddProduct",method=RequestMethod.POST)
 	public String productAdd(@ModelAttribute("cat") Product product)
 	{
 		if(product.getProductId()==0)
@@ -36,20 +36,20 @@ public class ProductController {
 			productRepository.updateProduct(product);
 		}
 		
-		return "redirect:/product";
+		return "redirect:/adminProduct";
 	}
 	
 	
-	@RequestMapping("/deleteProduct/{id}")
+	@RequestMapping("/adminDeleteProduct/{id}")
 	
 		public String productDelete(@PathVariable("id") int productId)
 		{
 			productRepository.deleteProduct(productId);
-			return "redirect:/product";
+			return "redirect:/adminProduct";
 	}
 	
 	
-	@RequestMapping("/editProduct/{id}")
+	@RequestMapping("/adminEditProduct/{id}")
 	
 	public String productUpdate(@PathVariable("id") int productId,Model model)
 	{

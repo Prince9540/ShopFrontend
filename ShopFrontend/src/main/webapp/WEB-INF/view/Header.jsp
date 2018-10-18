@@ -1,3 +1,5 @@
+
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,22 +23,45 @@
       <li class="nav-item">
         <a class="nav-link" href="home">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signIn">SignIn</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="signUp">SignUp</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="aboutUs">AboutUs</a>
-      </li>
+      
+      <security:authorize access="hasRole('ROLE_ADMIN')" >
       <li class="nav-item">
         <a class="nav-link" href="adminHome">Admin</a>
       </li>
-    </ul>
+      </security:authorize>
+      
+       <li class="nav-item">
+        <a class="nav-link" href="aboutUs">AboutUs</a>
+      </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      
+      
+      <security:authorize access="isAnonymous()">
+      <li class="nav-item">
+        <a class="nav-link" href="signIn"><span class="glyphicon glyphicon-log-in"></span> SignIn</a>
+      </li>
+      </security:authorize>
+      
+      
+      <security:authorize access="isAnonymous()">
+       <li class="nav-item">
+        <a class="nav-link" href="signUp"><span class="glyphicon glyphicon-user"></span> SignUp</a>
+      </li>
+      </security:authorize>
+      
+      
+       <security:authorize access="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="logOut"><span class="glyphicon glyphicon-user"></span> LogOut</a>
+      </li>
+      </security:authorize>
+     
+      </ul>
+      
+   
   </div>  
 </nav>
-
 
 
 </body>

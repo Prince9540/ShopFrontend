@@ -19,20 +19,20 @@
 	 <intercept-url pattern="/admin*" access="hasRole('ROLE_ADMIN')" />
 	-->
 		
-		<form-login login-page="/login"
+		<form-login login-page="/signIn"
 		 username-parameter="emailid" password-parameter="password" 
-		 login-processing-url="/logg"
-			authentication-failure-url="/login"
+		 login-processing-url="/signIn"
+			authentication-failure-url="/signIn"
 			default-target-url="/" />			
-		<logout logout-url="/LogOut" delete-cookies="true"
-		 logout-success-url="/Login?LogOut" />
+		<logout logout-url="/logOut" delete-cookies="true"
+		 logout-success-url="/signIn?logOut" />
 		<csrf disabled="true" />
 	</http>
 	<authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="select emailid,password,isactive from Customer where emailid=?"
-				authorities-by-username-query="select username,rolename from authorization where username =?  " />
+				users-by-username-query="select emailid,password,isactive from userdetail where emailid=?"
+				authorities-by-username-query="select username,rolename from authorize where username =?  " />
 		</authentication-provider>
 	</authentication-manager>
 </beans:bean>

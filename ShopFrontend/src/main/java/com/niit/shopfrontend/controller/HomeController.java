@@ -47,6 +47,14 @@ public class HomeController {
 	{
 		return "index";
 	}
+	
+	@RequestMapping("/logOut")
+	public String logOutPage()
+	{
+		return "SignIn";
+	}
+	
+	
 	@RequestMapping("/signIn")
 	public String signInPage()
 	{
@@ -62,7 +70,7 @@ public class HomeController {
 		return "SignUp";
 	}
 	
-	@RequestMapping("/category")
+	@RequestMapping("/adminCategory")
 	public String categoryPage(Model model)
 	{  
 		List<Category> allCategories= categoryRepository.getAllCategory();
@@ -71,7 +79,7 @@ public class HomeController {
 		return "Category";
 	}
 	
-	@RequestMapping("/product")
+	@RequestMapping("/adminProduct")
 	public String productPage(Model model)
 	{  
 		List<Product> allProducts= productRepository.getAllProduct();

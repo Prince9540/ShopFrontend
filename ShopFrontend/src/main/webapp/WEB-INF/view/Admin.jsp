@@ -19,18 +19,20 @@
 <body>
 
 <div class="container">
-  <h2>Admin Page</h2>
+<br></br>
+<br></br>
+  <h2>Admin</h2>
   <br></br>
   
   <div class="card-columns">
-    <div class="card bg-warning">
+    <div class="card bg-primary">
       <div class="card-body text-center">
-        <a class="card-text"  href="category">Category</a>
+        <a class="text-white"  href="adminCategory">Category</a>
       </div>
    </div>
-    <div class="card bg-warning">
-      <div class="card-body text-center">
-         <a class="card-text"  href="product">Product</a>
+    <div class="card bg-primary">
+      <div class="card-body text-center text-white">
+         <a class="text-white" href="adminProduct">Product</a>
       </div>
     </div>
  </div>

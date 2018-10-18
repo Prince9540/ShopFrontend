@@ -7,23 +7,12 @@
 <title>Footer</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: red;
-   color: white;
-   text-align: center;
-}
-
 </head>
 <body>
-
-<div class="footer">
-  <p>Footer</p>
+<div class="container">
+    <div class="page-header pt-2">
+        <h1> Footer</h1>
+    </div>
 </div>
-
 </body>
 </html>

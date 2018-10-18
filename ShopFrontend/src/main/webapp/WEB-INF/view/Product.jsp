@@ -23,7 +23,7 @@
 <br><br>
 <div class="container" width="50%">
 <h2 align="center">Add Product</h2><hr>
-<spring:form action="${pageContext.request.contextPath}/addProduct" modelAttribute="product" method="POST">
+<spring:form action="${pageContext.request.contextPath}/adminAddProduct" modelAttribute="product" method="POST">
 <div class="form-group">
 <c:if test="${not empty product.productName}">
 <label for="pid">Product Id:</label>
@@ -94,8 +94,8 @@
 <td><b>${pro.productDescription}</b></td>
 <td><b>${pro.productPrice}</b></td>
 <td><b>${pro.productQuantity}</b></td>
-<td><a href="editProduct/${pro.productId}"><b>Edit</b></a></td>
-<td><a href="deleteProduct/${pro.productId}"><b>Delete</b></a></td>
+<td><a href="adminEditProduct/${pro.productId}"><b>Edit</b></a></td>
+<td><a href="adminDeleteProduct/${pro.productId}"><b>Delete</b></a></td>
 </tr>
 </tbody>
 </c:forEach>

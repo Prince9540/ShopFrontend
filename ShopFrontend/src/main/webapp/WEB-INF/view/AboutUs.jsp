@@ -3,7 +3,7 @@
     pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>AboutUs</title>
@@ -17,9 +17,7 @@
 
 <div class="jumbotron">
   <h1>PhoneBazar</h1> 
-  <p>*************
-  *********************
-************************** </p> 
+  <p>*********</p> 
 </div>
 
 </body>

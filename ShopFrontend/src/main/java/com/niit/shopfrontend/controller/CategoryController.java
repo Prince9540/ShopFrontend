@@ -18,7 +18,7 @@ public class CategoryController {
 	@Autowired
 	CategoryRepository categoryRepository;
 
-	@RequestMapping(value="/addCategory",method=RequestMethod.POST)
+	@RequestMapping(value="/adminAddCategory",method=RequestMethod.POST)
 	public String categoryAdd(@ModelAttribute("cat") Category category)
 	{
 		if(category.getCategoryId()==0)
@@ -30,20 +30,20 @@ public class CategoryController {
 			categoryRepository.updateCategory(category);
 		}
 		
-		return "redirect:/category";
+		return "redirect:/adminCategory";
 	}
 	
 	
-	@RequestMapping("/deleteCategory/{id}")
+	@RequestMapping("/adminDeleteCategory/{id}")
 	
 		public String categoryDelete(@PathVariable("id") int categoryId)
 		{
 			categoryRepository.deleteCategory(categoryId);
-			return "redirect:/category";
+			return "redirect:/adminCategory";
 	}
 	
 	
-	@RequestMapping("/editCategory/{id}")
+	@RequestMapping("/adminEditCategory/{id}")
 	
 	public String categoryUpdate(@PathVariable("id") int categoryId,Model model)
 	{

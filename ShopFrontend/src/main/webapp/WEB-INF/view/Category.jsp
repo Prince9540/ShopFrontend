@@ -21,7 +21,7 @@
 <br><br>
 <div class="container">
 <h2 align="center">Add Category</h2><hr>
-<spring:form action="${pageContext.request.contextPath}/addCategory" modelAttribute="cat" method="POST">
+<spring:form action="${pageContext.request.contextPath}/adminAddCategory" modelAttribute="cat" method="POST">
 <div class="form-group">
 <c:if test="${not empty cat.categoryName}">
 <label for="cid">Category ID:</label>
@@ -68,9 +68,9 @@
 <td><b>${cate.categoryName}</b></td>
 <td><b>${cate.categoryDescription}</b></td>
 
-<td><a href="editCategory/${cate.categoryId}"><b>Edit</b></a></td>
+<td><a href="adminEditCategory/${cate.categoryId}"><b>Edit</b></a></td>
 
-<td><a href="deleteCategory/${cate.categoryId}"><b>Delete</b></a></td>
+<td><a href="adminDeleteCategory/${cate.categoryId}"><b>Delete</b></a></td>
 </tr>
 </tbody>
 </c:forEach>

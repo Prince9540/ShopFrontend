@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.shopbackend.model.Authorize;
 import com.niit.shopbackend.model.Category;
 import com.niit.shopbackend.model.Product;
 import com.niit.shopbackend.model.UserDetail;
@@ -46,7 +47,7 @@ public class DBConfig
 		sessionFactory.addAnnotatedClass(Category.class);
 		sessionFactory.addAnnotatedClass(Product.class);
 		sessionFactory.addAnnotatedClass(UserDetail.class);
-		
+		sessionFactory.addAnnotatedClass(Authorize.class);
 		sessionFactory.addProperties(getHibernateProperties());
 		
 		return sessionFactory.buildSessionFactory();

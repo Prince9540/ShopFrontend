@@ -11,8 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.niit.shopbackend.model.Category;
-import com.niit.shopbackend.model.Product;
+import com.niit.shopbackend.model.Authorize;
 import com.niit.shopbackend.model.UserDetail;
 
 
@@ -28,6 +27,9 @@ public class UserDetailRepositoryImpl implements UserDetailRepository {
 		Session session=sessionFactory.getCurrentSession();
 		try{
 		session.save(userDetail);
+		Authorize authorize = new Authorize(); 
+		authorize.setUserName(userDetail.getEmailId());
+		session.save(authorize);
 		return true;
 		}
 		catch(HibernateException e)

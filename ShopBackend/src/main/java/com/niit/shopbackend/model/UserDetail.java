@@ -20,13 +20,11 @@ public class UserDetail implements Serializable {
 	private String firstName;
 	private String lastName;
 	private int phoneNumber;
-	private int birthDate;
-	private int gender;
+	private String birthDate;
+	private String gender;
 	private String emailId;
 	private String password;
-	
-	
-	
+	private boolean isActive=true;
 	
 	public String getFirstName() {
 		return firstName;
@@ -46,16 +44,16 @@ public class UserDetail implements Serializable {
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public int getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(int birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
-	public int getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(int gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getEmailId() {
@@ -70,6 +68,14 @@ public class UserDetail implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	
+	
 	
 	
 	
